@@ -107,7 +107,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>3.0.7.RELEASE</version>
+            <version>5.3.38</version>
             <exclusions>
               <exclusion>
                 <groupId>aopalliance</groupId>
@@ -380,7 +380,7 @@
                             <tasks>
                                 <copy todir="${basedir}/target/${project.artifactId}-${project.version}">
                                     <fileset dir="${basedir}">
-                                        <include name="*.txt" />
+                                        <include name="*.txt"/>
                                     </fileset>
                                 </copy>
                             </tasks>
@@ -430,11 +430,11 @@
                                 <configuration>
                                     <tasks>
                                         <echo>Setting up directory...</echo>
-                                        <sshexec host="shell.sourceforge.net" username="${pebble.sf.net.username}" password="${pebble.sf.net.password}" trust="true" command="mkdir -p /home/frs/project/p/pe/pebble/pebble/${project.version}" />
+                                        <sshexec host="shell.sourceforge.net" username="${pebble.sf.net.username}" password="${pebble.sf.net.password}" trust="true" command="mkdir -p /home/frs/project/p/pe/pebble/pebble/${project.version}"/>
                                         <echo>Uploading pebble zip to sourceforge...</echo>
-                                        <scp todir="${pebble.sf.net.username}@frs.sourceforge.net:/home/frs/project/p/pe/pebble/pebble/${project.version}/" password="${pebble.sf.net.password}" trust="true" sftp="true" file="target/pebble-${project.version}.zip" />
+                                        <scp todir="${pebble.sf.net.username}@frs.sourceforge.net:/home/frs/project/p/pe/pebble/pebble/${project.version}/" password="${pebble.sf.net.password}" trust="true" sftp="true" file="target/pebble-${project.version}.zip"/>
                                         <echo>Updating permissions...</echo>
-                                        <sshexec host="shell.sourceforge.net" username="${pebble.sf.net.username}" password="${pebble.sf.net.password}" trust="true" command="chmod -R g+w /home/frs/project/p/pe/pebble/pebble/${project.version}" />
+                                        <sshexec host="shell.sourceforge.net" username="${pebble.sf.net.username}" password="${pebble.sf.net.password}" trust="true" command="chmod -R g+w /home/frs/project/p/pe/pebble/pebble/${project.version}"/>
                                     </tasks>
                                 </configuration>
                             </execution>
